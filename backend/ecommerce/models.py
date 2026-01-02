@@ -47,7 +47,7 @@ class Product(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to="products/")
     category = models.CharField(max_length=100)
-    seller = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="products")
+    seller = models.ForeignKey(User, on_delete=models.CASCADE, related_name="products")
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
